@@ -1,0 +1,275 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+% This fork/modified version has been made by Nicolás Omar González Passerino (nicolas.passerino@gmail.com, 15 Oct 2020)
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and academicons fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% ----- LIGHT MODE -----
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{PrimaryColor}{HTML}{196619}
+\definecolor{SecondaryColor}{HTML}{2eb82e}
+\definecolor{ThirdColor}{HTML}{196619}
+\definecolor{BackgroundColor}{HTML}{ffffff}
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{PrimaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+\pagecolor{BackgroundColor}   
+% ----- DARK MODE -----
+%\definecolor{BackgroundColor}{HTML}{242424}
+%\definecolor{SlateGrey}{HTML}{6F6F6F}
+%\definecolor{LightGrey}{HTML}{ABABAB}
+%\definecolor{PrimaryColor}{HTML}{3F7FFF}
+%\colorlet{name}{PrimaryColor}
+%\colorlet{tagline}{PrimaryColor}
+%\colorlet{heading}{PrimaryColor}
+%\colorlet{headingrule}{PrimaryColor}
+%\colorlet{subheading}{PrimaryColor}
+%\colorlet{accent}{PrimaryColor}
+%\colorlet{emphasis}{LightGrey}
+%\colorlet{body}{LightGrey}
+%\pagecolor{BackgroundColor}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+%% \addbibresource{sample.bib}
+
+\begin{document}
+    \name{Murali Wood}
+    \tagline{FPGA Developer}
+    %% You can add multiple photos on the left or right
+    \photoL{4cm}{Astro3}
+    
+    \personalinfo{
+        \email{mugz.wood@gmail.com}\smallskip
+        \phone{+44 (0)7----------5}
+        \location{Bangor, Wales}\\
+        \linkedin{murali-wood-46957a17a}
+        \github{MogoBagginz}
+        %\homepage{nicolasomar.me}
+        %\medium{nicolasomar}
+        %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+        % \orcid{0000-0000-0000-0000}
+        %% You can add your own arbtrary detail with
+        %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+        % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+        %% Or you can declare your own field with
+        %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+        % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+        % \gitlab{your_id}
+    }
+    
+    \makecvheader
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    % \AtBeginEnvironment{itemize}{\small}
+    
+    %% Set the left/right column width ratio to 6:4.
+    \columnratio{0.25}
+
+    % Start a 2-column paracol. Both the left and right columns will automatically
+    % break across pages if things get too long.
+    \begin{paracol}{2}
+    
+         % ----- ABOUT ME -----
+        \cvsection{About Me}
+            \begin{quote}
+                Space enthusiast, keen electronics hobbyist, technically capable, creative thinker who enjoys exploring the limits of what is possible. 
+            \end{quote}
+        % ----- ABOUT ME -----
+        
+        % ----- STRENGTHS -----
+        \cvsection{Strengths}
+            \cvtag{C}
+            \cvtag{Verilog}
+            \cvtag{Digital design}
+            \cvtag{Apio}
+            \cvtag{Quartus}
+            \cvtag{Soldering}
+            \cvtag{Java}
+            \cvtag{Pro Tools}
+            \cvtag{easyEDA}
+            \cvtag{Arduino}
+            \cvtag{Photoshop}
+            \cvtag{Illustrator}
+            \medskip
+        % ----- STRENGTHS -----
+        
+        % ----- LEARNING -----
+        \cvsection{Learning}
+            \cvtag{VHDL}
+            \cvtag{DaVinci Resolve}\\
+            \cvtag{Fusion360}
+            \cvtag{3D printing}\\
+            \cvtag{Drone Building}
+            \cvtag{Latex}
+            \cvtag{MatLab}
+            \medskip
+        % ----- LEARNING -----
+        
+         % ----- Courses -----
+        \cvsection{Courses}
+            \cvlang{Environmental First Aid}{Outreach Rescue Medical Skills}
+            \smallskip
+        % ----- Courses -----
+        
+        % ----- LANGUAGES -----
+        \cvsection{Languages}
+            \cvlang{English}{Native}\\
+            \cvlang{German}{Basic}\\
+            \cvlang{Welsh}{Basic}
+            %% Yeah I didn't spend too much time making all the
+            %% spacing consistent... sorry. Use \smallskip, \medskip,
+            %% \bigskip, \vpsace etc to make ajustments.
+            \smallskip
+        % ----- LANGUAGES -----
+                   
+        % ----- REFERENCES -----
+        \cvsection{References}
+            \cvlang{Dr Roger Giddings\\ (Project Supervisor)}{}\\
+            \email{r.p.giddings@bangor.ac.uk}
+            \smallskip
+        % ----- REFERENCES -----
+        
+        % ----- MOST PROUD -----
+        % \cvsection{Most Proud of}
+        
+        % \cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}\\
+        % \divider
+        % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}\\
+        % \divider
+        % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+        % ----- MOST PROUD -----
+        
+        % \cvsection{A Day of My Life}
+        
+        % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+        % \wheelchart{outer radius}{inner radius}{
+        % comma-separated list of value/text width/color/detail}
+        % \wheelchart{1.5cm}{0.5cm}{%
+        %   6/8em/accent!30/{Sleep,\\beautiful sleep},
+        %   3/8em/accent!40/Hopeful novelist by night,
+        %   8/8em/accent!60/Daytime job,
+        %   2/10em/accent/Sports and relaxation,
+        %   5/6em/accent!20/Spending time with family
+        % }
+        
+        % use ONLY \newpage if you want to force a page break for
+        % ONLY the current column
+        \newpage
+        
+        %% Switch to the right column. This will now automatically move to the second
+        %% page if the content is too long.
+        \switchcolumn
+
+        % ----- EDUCATION -----
+        \cvsection{Education}
+            \cvevent{BEng Electronic Engineering }{| Bangor University}{Sept 2018 -- June 2021}{Bangor, Wales}
+            \begin{quote}
+                Relevant modules - 	Digital Circuits Design 1 (80\%), Imperative Programming in C (98\%), VLSI Design Principles (81\%), Optoelectronics (71\%), Digital Circuits 2 (75\%), Communication Systems (77\%), Project, Planning & Management (87\%), Circuit Design (83\%), Digital Circuits & Design 1 (80\%), Optical Communication,  Information & Coding - Comms,  Signal Processing.
+            \end{quote}
+            \smallskip
+            \cvtag{Predicted grade: First}
+
+        % ----- EDUCATION -----
+        
+        % ----- PROJECTS -----
+        \cvsection{Projects}
+            \cvevent{Laser-Based Free Space Comunications}{\cvrepo{| \faGithub}{https://github.com/MogoBagginz/Laser-Based-FSO-TinyFPGA-BX}}{}{}{}
+            \begin{quote}
+                The project involved designing and building a transmitter and receiver, writing the Verilog from scratch including a TestBench file, PRBS generation using LFSR and a BER detector. The FPGA was a tinyFPGA BX which uses the ICE40PL8k chip from lattice. It achieved a bandwidth of 2.6 Mbps when using a 5 mW laser.
+            \end{quote}
+            \bigskip
+            %\divider
+            
+            %\cvevent{FPGA Calculator }{\cvrepo{| %\faGithub}{https://github.com/MogoBagginz/TinyFPGACalculator}{}}{}{}
+            %\begin{quote}
+             %   As a way to learn a HDL I designed a calculator that accepted 8-bit numbers. The number %is stored in a register and could be added, subtracted, multiplied or divided by another %8-bit number. The sum is displayed using a 4x seven segment display.
+            %\end{quote}
+        % ----- PROJECTS -----
+                
+        % ----- EXPERIENCE -----
+        \cvsection{Experience}
+            \cvevent{President }{| MakerSpace Society}{2018 -- 2021}{Bangor University}            \begin{quote}
+                The MakerSpace is a student run society that organises weekly meet ups and special events such as an amateur robot building competition Hebocon. We have a workshop in the university that we keep stocked and maintained. 
+            \end{quote}
+  
+            \bigskip
+            \cvevent{Band member/manager, Street musician }{| Musician}{2019 -- 2016}{25+ countries}
+            \begin{quote}
+                By working on recording a demo, creating an online presence and organising events I took my band The Rude 'em Outs from playing pub gigs to headlining festivals in two years. I have travelled extensively throughout Europe, Asia and Australia, supporting myself as a musician.
+            \end{quote}
+            
+            
+            %\divider
+            \bigskip
+            
+            \cvevent{Volunteer }{| North Wales Tech}{2020}{Bangor, Wales}
+            \begin{itemize}
+                \item Helped out organising Tech/Maker events 
+            \end{itemize}
+        % ----- EXPERIENCE -----
+        
+    \end{paracol}
+\end{document}
